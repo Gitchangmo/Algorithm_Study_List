@@ -17,3 +17,20 @@ for i in range(N):
                 best_sum = max(current_sum, best_sum)
 
 print(best_sum)
+
+
+# combinations 라이브러리 활용한 방법
+from itertools import combinations
+
+N, M = map(int, input().split())
+cards = list(map(int, input().split()))
+
+best_sum = 0
+
+for combo in combinations(cards, 3):
+    current_sum = sum(combo)
+
+    if current_sum <= M:
+        best_sum = max(current_sum, best_sum)
+
+print(best_sum)
